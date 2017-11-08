@@ -6,5 +6,7 @@
 return [
 	'route_prefix' => 'chatter',
 
-	'route_middleware' => ''
+	'route_middleware' => '',
+
+	'group_max_users' => 100
 ];

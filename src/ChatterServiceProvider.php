@@ -14,9 +14,12 @@ class ChatterServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+    	$config_source =  __DIR__.'/config.php';
     	$this->publishes([
-		    __DIR__.'/config.php' => config_path('chatter.php')
+		   $config_source => config_path('chatter.php')
 	    ]);
+
+    	$this->mergeConfigFrom($config_source, 'chatter');
 
     	$this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
