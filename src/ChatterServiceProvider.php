@@ -24,11 +24,11 @@ class ChatterServiceProvider extends ServiceProvider
     	$this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
     	$options = [
-		    'prefix' => config('chatter.route_prefix', 'chatter'),
+		    'prefix' => config('chatter.api.route_prefix', 'chatter'),
 		    'namespace' => '\WEBNinja\Chatter\Http\Controllers'
 	    ];
 
-    	if(!empty($middleware = config('chatter.route_middleware', ''))){
+    	if(!empty($middleware = config('chatter.api.route_middleware', ''))){
     		$options['middleware'] = $middleware;
 	    }
 
